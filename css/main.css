@@ -115,14 +115,19 @@ body{
 }
 
 .balloon .body::before{
-    border-bottom: 1em solid currentColor;
+    /*border-bottom: 1em solid currentColor;
     border-left: 0.5em solid transparent;
-    border-right: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;*/
     -webkit-transform-origin: center;
     transform-origin: center;
-    top: 95%;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
+    width: 10px;
+    height: 5px;
+    background: currentColor;
+    border: 2px solid #333;
+    border-radius: 5px 5px 0 0;
 }
 
 .balloon.center:not(.remove-balloon) .body::after{
@@ -156,6 +161,7 @@ body{
     box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
     color: currentColor;
     position: relative;
+    border: 2px solid #333;
 }
 
 .balloon.flower .body{
