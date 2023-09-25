@@ -40,11 +40,11 @@ houseContainer.addEventListener("click", function() {
     }
 
     //랜덤 클래스 배열
-    const classes = ["flower", "ribbon", "bear", "rainbow", "heart", "normal"];
+    const classes = ["flower", "ribbon", "bear", "rainbow", "heart"];
 
     // 랜덤한 클래스 선택
     const isNormalClass = Math.random() < 0.85;
-    const randomClass = isNormalClass ? "normal" : classes[Math.floor(Math.random() * (classes.length - 1))];
+    const randomClass = isNormalClass ? "normal" : classes[Math.floor(Math.random() * (classes.length))];
 
     balloon.classList.add(randomClass);
     balloonContainer.appendChild(balloon);
