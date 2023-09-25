@@ -1,0 +1,313 @@
+html,
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background: rgb(125,213,244);
+    background: linear-gradient(180deg, skyblue 0%, deepskyblue 100%);
+}
+
+/* 구름 영역 */
+.cloud{
+    background: #fff;
+    width: 100px;
+    height: 30px;
+    border-radius: 1rem;
+    position: absolute;
+    border-bottom: 2px solid #eee;
+    z-index: -1;
+}
+
+.cloud::after,
+.cloud::before{
+    display: block;
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.cloud::after{
+    bottom: -10px;
+    right: 20px;
+    border-bottom: 2px solid #eee;
+}
+.cloud::before{
+    top: -10px;
+    left: 20px;
+    border-top: 2px solid #eee;
+}
+
+.cloud_1{
+    left: 7%;
+    bottom: 17%;
+    transform: scale(3) rotate(5deg);
+}
+.cloud_2{
+    left: 22%;
+    bottom: 0;
+    transform: scale(3) rotate(5deg);
+}
+.cloud_3{
+    left: 20%;
+    top: 50%;
+    transform: scale(1.5) rotate(10deg);
+}
+.cloud_4{
+    left: 38%;
+    bottom: 20%;
+    transform: scale(1) rotate(3deg);
+}
+.cloud_5{
+    left: 55%;
+    bottom: 28%;
+    transform: scale(1) rotate(-3deg);
+}
+.cloud_6{
+    left: 75%;
+    bottom: -2%;
+    transform: scale(4) rotate(-5deg);
+}
+.cloud_7{
+    right: 8%;
+    bottom: 30%;
+    transform: scale(2.5) rotate(-5deg);
+}
+.cloud_8{
+    right: 20%;
+    bottom: 40%;
+    transform: scale(2) rotate(-10deg);
+}
+
+/* 집 영역 */
+.house_container{
+    margin: auto auto 0;
+    border: 0;
+    padding: 0;
+    background-image: url(../img/house.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 515px;
+    height: 311px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+/* 풍선 영역 */
+.balloon{
+    top: 0;
+}
+
+.balloon .body::before{
+    display: block;
+    content: "";
+    position: absolute;
+}
+
+.balloon .body::before{
+    border-bottom: 1em solid currentColor;
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    top: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.balloon.center:not(.remove-balloon) .body::after{
+    display: block;
+    content: "";
+    height: 10000px;
+    background: #999;
+    width: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.balloon.remove-balloon{
+    margin-top: -100%;
+    transition: 1s ease-in-out;
+}
+
+.balloon .body{
+    cursor: pointer;
+}
+
+.balloon.normal .body{
+    width: 100%;
+    height: auto;
+    padding-top: 120%;
+    background: currentColor;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
+    color: currentColor;
+    position: relative;
+}
+
+.balloon.flower .body{
+    background: transparent !important;
+    width: 100%;
+    padding-top: 100%;
+    height: auto;
+    position: relative;
+}
+
+.balloon.flower .body2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/flower.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    transform: rotate(310deg) scale(1.5);
+}
+
+.balloon.flower .body::before{
+    display: none !important;
+}
+
+.balloon.ribbon .body{
+    background: transparent !important;
+    width: 100%;
+    padding-top: 100%;
+    height: auto;
+    position: relative;
+}
+.balloon.ribbon .body2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/ribbon.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    transform: scale(3);
+}
+.balloon.ribbon .body::before,
+.balloon.ribbon .body::after{
+    display: none !important;
+}
+
+.balloon.bear .body{
+    background: transparent !important;
+    width: 100%;
+    padding-top: 100%;
+    height: auto;
+    position: relative;
+}
+
+.balloon.bear .body2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/bear.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    transform: rotate(-20deg) scale(2);
+    transform-origin: 100% 10%;
+}
+
+.balloon.bear .body::before{
+    display: none !important;
+}
+
+.balloon.rainbow .body{
+    background: transparent !important;
+    width: 100%;
+    padding-top: 100%;
+    height: auto;
+    position: relative;
+}
+
+.balloon.rainbow .body2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/rainbow.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    transform: scale(3);
+}
+
+.balloon.rainbow .body::before,
+.balloon.rainbow .body::after{
+    display: none !important;
+}
+
+.balloon.heart .body{
+    background: transparent !important;
+    width: 100%;
+    padding-top: 100%;
+    height: auto;
+    position: relative;
+}
+
+.balloon.heart .body2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/heart.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    transform: rotate(-36deg) scale(2);
+    transform-origin: 100% 10%;
+}
+
+.balloon.heart .body::before{
+    display: none !important;
+}
+
+.balloon:not(.center) .body{
+    animation:balloons 4s ease-in-out infinite;
+}
+
+.balloon.center .body{
+    animation:balloons2 4s ease-in-out infinite;
+}
+
+.balloon_container{
+    flex-grow: 1;
+    position: relative;
+}
+
+.balloon_container .balloon{
+    position: absolute;
+}
+
+@keyframes balloons {
+    0%,100%{ transform:translateY(0) rotate(-4deg); }
+    50%{ transform:translateY(-25px) rotate(4deg); }
+}
+
+@keyframes balloons2 {
+    0%,100%{ transform:translateY(1px) rotate(-1deg); }
+    50%{ transform:translateY(-1px) rotate(1deg); }
+}
