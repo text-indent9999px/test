@@ -26,7 +26,7 @@ houseContainer.addEventListener("click", function() {
     const randomSize = getRandomSize(); //랜덤 사이즈
     const randomRotate = getRandomRotate(); //랜덤 기울기
     const randomTop = getRandomTop(); //랜덤 y값
-    const randomColor = getRandomBrightColor(50, 70); //랜덤 색상
+    const randomColor = getRandomBrightColor(60, 70); //랜덤 색상
 
     balloon.style.color = randomColor;
     balloon.style.width = randomSize + '%';
@@ -40,7 +40,7 @@ houseContainer.addEventListener("click", function() {
     }
 
     //랜덤 클래스 배열
-    const classes = ["flower", "ribbon", "bear", "rainbow", "heart"];
+    const classes = ["flower", "ribbon", "bear", "rainbow", "heart", "sale"];
 
     // 랜덤한 클래스 선택
     const isNormalClass = Math.random() < 0.85;
